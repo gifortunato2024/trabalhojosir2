@@ -28,9 +28,9 @@ if page == 2:
     st.header("Qual nicho de podcast você gosta de assistir?")
     nicho = st.selectbox("Escolha um nicho", ["Conversas", "React", "Politica", "Empreendedorismo", "Paranormal", "Esporte", "Jogos", "Especialistas", "Tecnologia"])
     nome_arquivo = "podcast_" + nicho.lower() + ".csv"
-    # Mostrar os 10 melhores canais de podcast no nicho escolhido
+    # Mostrar  canais de podcast relacionados ao nicho escolhido
     df = pd.read_csv(nome_arquivo)
-    st.header(f"Top 10 canais de podcast no YouTube brasileiro sobre {nicho}")
+    st.header(f"Canais relacionados sobre {nicho}")
     st.write(df)
     # Adiciona a imagem no topo da primeira página
     st.image("https://tecnoblog.net/noticias/youtube-teste-problema-desmonetizacao/", use_column_width=True)

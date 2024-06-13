@@ -2,16 +2,21 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background: url('IMG_0455.jpeg') no-repeat center center fixed;
-        background-size: cover;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
+import streamlit as st
+
+page_bg_img = '''
+<style>
+body {
+    background-image: url("IMG_0455.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+</style>
+'''
+
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
 
 st.sidebar.title("Já conhece o nosso site?")
 st.sidebar.info("Nosso site é para os amantes de podcast que estão em busca de novos canais. Aqui você pode escolher a categoria que você gosta e descobrir novas experiências. Aproveite!")

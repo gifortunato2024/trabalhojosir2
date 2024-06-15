@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 from PIL import Image
+import matplotlib.pyplot as plt
 
-import streamlit as st
 
 
 st.sidebar.title("Já conhece o nosso site?")

@@ -32,7 +32,7 @@ if page == 2:
     nicho = st.selectbox("Escolha um nicho", ["Conversas", "Empreendedorismo", "Educacao", "Esporte", "Jogos", "Tecnologia", "Noticias"])
     nome_arquivo = "podcast_" + nicho.lower() + ".csv"
     # Mostrar  canais de podcast relacionados ao nicho escolhido
-    df = pd.read_csv(nome_arquivo)
+    df = pd.read_csv(podcast_eportes)
     st.header(f"Canais relacionados sobre {nicho}")
     st.write(df)
     # Adiciona a imagem no topo da primeira página

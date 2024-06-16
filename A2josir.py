@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 from PIL import Image
-pip install plotly
 import plotly.express as px
 
 st.sidebar.title("Já conhece o nosso site?")
@@ -9,7 +8,7 @@ st.sidebar.info("Nosso site é para os amantes de podcast que estão em busca de
 
 # Página 1: Perguntas sobre hábitos de assistir podcasts
 page = st.session_state.get("page", 1)
-    
+
 if page == 1:
     with st.container():
         st.title("Amantes de Podcast ❤️")
@@ -21,26 +20,35 @@ if page == 1:
         canais_diferentes = st.radio("Você costuma assistir canais diferentes?", ("Sim", "Não, gosto de assistir o mesmo sempre "))
 
         if assiste_podcast == "Sim, amo!":
-            st.header("Se sim, que bom! Vou te mostrar outros para você experimentar. Se você só assiste os mesmos, essa é uma ótima oportunidade para conhecer novos canais.🤩")
+            st.header("Se sim, que bom! Vou te mostrar outros para você experimentar. Se você só assiste os mesmos, essa é uma ótima oportunidade para conhecer novos canais.")
             if st.button("Next"):  # Verifica se o botão "Next" foi pressionado
                 st.session_state["page"] = 2
+
+# Função para gerar e exibir o gráfico
+def mostrar_grafico(df, nicho):
+    st.header(f"Comparação de Inscritos nos Canais de {nicho}")
+    fig = px.bar(df, x='Nome do Canal', y='Número de Inscritos', title=f'Número de Inscritos nos Canais de {nicho}')
+    st.plotly_chart(fig)
 
 # Página 2: Perguntar sobre o nicho de interesse
 if page == 2:
     with st.container():
-        st.title("Nicho de Podcast 🎤")
-        st.header("Qual nicho de podcast você gosta de assistir? ")
+        st.title("Nicho de Podcast")
+        st.header("Qual nicho de podcast você gosta de assistir?")
         nicho = st.selectbox("Escolha um nicho", ["Conversas", "Empreendedorismo", "Educacao", "Esporte", "Jogos", "Tecnologia", "Noticias"])
         nome_arquivo = "podcast_" + nicho.lower() + ".csv"
-        # Mostrar  canais de podcast relacionados ao nicho escolhido
-        df = pd.read_csv(nome_arquivo)
-        st.header(f"Canais relacionados sobre {nicho}")
-        st.write(df)
-        def mostrar_grafico(df, nicho):
-    st.header(f"Comparação de Inscritos nos Canais de {nicho}")
-    fig = px.bar(df, x='Nome do Canal', y='Número de Inscritos', title=f'Número de Inscritos nos Canais de {nicho}')
-    st.plotly_chart(fig)
-        
+
+        try:
+            # Mostrar canais de podcast relacionados ao nicho escolhido
+            df = pd.read_csv(nome_arquivo)
+            st.header(f"Canais relacionados sobre {nicho}")
+            st.write(df)
+
+            # Mostrar o gráfico
+            mostrar_grafico(df, nicho)
+
+        except FileNotFoundError:
+            st.error(f"Arquivo {nome_arquivo} não encontrado. Por favor, verifique se o arquivo existe.")
 
         # Adiciona a imagem no topo da primeira página
         st.image("https://tecnoblog.net/noticias/youtube-teste-problema-desmonetizacao/", use_column_width=True)

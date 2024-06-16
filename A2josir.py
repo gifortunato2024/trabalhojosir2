@@ -8,7 +8,7 @@ st.sidebar.info("Nosso site é para os amantes de podcast que estão em busca de
 
 # Página 1: Perguntas sobre hábitos de assistir podcasts
 page = st.session_state.get("page", 1)
-with st.container():
+    with st.container():
 if page == 1:
     st.title("Amantes de Podcast ❤️")
     foto = Image.open('Foto site .JPG')
@@ -25,7 +25,7 @@ if page == 1:
 
 # Página 2: Perguntar sobre o nicho de interesse
 if page == 2:
-with st.container():
+    with st.container():
     st.title("Nicho de Podcast 🎤")
     st.header("Qual nicho de podcast você gosta de assistir? ")
     nicho = st.selectbox("Escolha um nicho", ["Conversas", "Empreendedorismo", "Educacao", "Esporte", "Jogos", "Tecnologia", "Noticias"])

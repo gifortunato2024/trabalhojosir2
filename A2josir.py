@@ -12,8 +12,6 @@ page = st.session_state.get("page", 1)
 if page == 1:
     with st.container:
         st.write("if page == 1:
-    with st.container:
-        st.write("")
 
     st.title("Amantes de Podcast ❤️")
     foto = Image.open('Foto site .JPG')
@@ -32,7 +30,7 @@ if page == 1:
 
 # Página 2: Perguntar sobre o nicho de interesse
 if page == 2:
-    with st.container():
+    
     st.title("Nicho de Podcast 🎤")
     st.header("Qual nicho de podcast você gosta de assistir? ")
     nicho = st.selectbox("Escolha um nicho", ["Conversas", "Empreendedorismo", "Educacao", "Esporte", "Jogos", "Tecnologia", "Noticias"])

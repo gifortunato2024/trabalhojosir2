@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 
+with st.container():
 st.sidebar.title("Já conhece o nosso site?")
 st.sidebar.info("Nosso site é para os amantes de podcast que estão em busca de novos canais. Aqui você pode escolher a categoria que você gosta e descobrir novas experiências. Aproveite!")
 
@@ -24,6 +25,7 @@ if page == 1:
 
 # Página 2: Perguntar sobre o nicho de interesse
 if page == 2:
+with st.container():
     st.title("Nicho de Podcast 🎤")
     st.header("Qual nicho de podcast você gosta de assistir? ")
     nicho = st.selectbox("Escolha um nicho", ["Conversas", "Empreendedorismo", "Educacao", "Esporte", "Jogos", "Tecnologia", "Noticias"])

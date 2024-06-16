@@ -27,8 +27,8 @@ if page == 1:
 
 # Página 2: Perguntar sobre o nicho de interesse
 if page == 2:
-    st.title("Nicho de Podcast")
-    st.header("Qual nicho de podcast você gosta de assistir? 🎤")
+    st.title("Nicho de Podcast 🎤")
+    st.header("Qual nicho de podcast você gosta de assistir? ")
     nicho = st.selectbox("Escolha um nicho", ["Conversas", "Empreendedorismo", "Educacao", "Esporte", "Jogos", "Tecnologia", "Noticias"])
     nome_arquivo = "podcast_" + nicho.lower() + ".csv"
     # Mostrar  canais de podcast relacionados ao nicho escolhido

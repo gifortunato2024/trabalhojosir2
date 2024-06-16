@@ -8,8 +8,9 @@ st.sidebar.info("Nosso site é para os amantes de podcast que estão em busca de
 
 # Página 1: Perguntas sobre hábitos de assistir podcasts
 page = st.session_state.get("page", 1)
-    with st.container():
+    
 if page == 1:
+    with st.container():
     st.title("Amantes de Podcast ❤️")
     foto = Image.open('Foto site .JPG')
     st.image(foto, width=500)

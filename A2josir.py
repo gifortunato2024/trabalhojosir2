@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 from PIL import Image
+pip install plotly
+import plotly.express as px
 
 st.sidebar.title("Já conhece o nosso site?")
 st.sidebar.info("Nosso site é para os amantes de podcast que estão em busca de novos canais. Aqui você pode escolher a categoria que você gosta e descobrir novas experiências. Aproveite!")
@@ -34,6 +36,11 @@ if page == 2:
         df = pd.read_csv(nome_arquivo)
         st.header(f"Canais relacionados sobre {nicho}")
         st.write(df)
+        def mostrar_grafico(df, nicho):
+    st.header(f"Comparação de Inscritos nos Canais de {nicho}")
+    fig = px.bar(df, x='Nome do Canal', y='Número de Inscritos', title=f'Número de Inscritos nos Canais de {nicho}')
+    st.plotly_chart(fig)
+        
 
         # Adiciona a imagem no topo da primeira página
         st.image("https://tecnoblog.net/noticias/youtube-teste-problema-desmonetizacao/", use_column_width=True)

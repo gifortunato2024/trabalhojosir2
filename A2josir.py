@@ -2,13 +2,13 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 
-with st.container():
+
 st.sidebar.title("Já conhece o nosso site?")
 st.sidebar.info("Nosso site é para os amantes de podcast que estão em busca de novos canais. Aqui você pode escolher a categoria que você gosta e descobrir novas experiências. Aproveite!")
 
 # Página 1: Perguntas sobre hábitos de assistir podcasts
 page = st.session_state.get("page", 1)
-
+with st.container():
 if page == 1:
     st.title("Amantes de Podcast ❤️")
     foto = Image.open('Foto site .JPG')

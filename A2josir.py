@@ -2,6 +2,12 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 
+body {
+    background-image: url('https://img.freepik.com/vector-gratis/fondo-abstracto-blanco-minimalista_23-2148816314.jpg?size=626&ext=jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 
 
 

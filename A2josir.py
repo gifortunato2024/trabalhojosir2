@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 from PIL import Image
-import matplotlib.pyplot as plt
+
 
 
 
@@ -36,13 +36,6 @@ if page == 2:
     st.header(f"Canais relacionados sobre {nicho}")
     st.write(df)
 
-    # Função para plotar o gráfico de barras
-def plot_popularidade_canais(df):
-    plt.figure(figsize=(10, 8))
-    plt.barh(df['Canal'], df['Número de Inscritos'], color='skyblue')
-    plt.xlabel('Número de Inscritos')
-    plt.title(f'Canais de Podcast de {nicho.capitalize()} mais Populares')
-    plt.gca().invert_yaxis()  # Inverter a ordem para exibir do mais popular para o menos popular
-    st.pyplot(plt)
+    
     # Adiciona a imagem no topo da primeira página
     st.image("https://tecnoblog.net/noticias/youtube-teste-problema-desmonetizacao/", use_column_width=True)

@@ -12,7 +12,6 @@ page = st.session_state.get("page", 1)
 if page == 1:
     with st.container:
         st.write("if page == 1:
-
     st.title("Amantes de Podcast ❤️")
     foto = Image.open('Foto site .JPG')
     st.image(foto, width=500)

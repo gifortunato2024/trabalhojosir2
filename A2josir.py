@@ -52,6 +52,3 @@ if page == 2:
         except FileNotFoundError:
             st.error(f"Arquivo {nome_arquivo} não encontrado. Por favor, verifique se o arquivo existe.")
 
-        # Adiciona a imagem no topo da primeira página
-        st.image("https://tecnoblog.net/noticias/youtube-teste-problema-desmonetizacao/", use_column_width=True)
-

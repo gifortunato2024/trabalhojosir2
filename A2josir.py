@@ -27,7 +27,7 @@ if page == 1:
 # Função para gerar e exibir o gráfico
 def mostrar_grafico(df, nicho):
     st.header(f"Comparação de Inscritos nos Canais de {nicho}")
-    fig = px.bar(df, x='Nome do Canal', y='Número de Inscritos', title=f'Número de Inscritos nos Canais de {nicho}')
+    fig = px.bar(df, x='Canal', y='Número de Inscritos', title=f'Número de Inscritos nos Canais de {nicho}')
     st.plotly_chart(fig)
 
 # Página 2: Perguntar sobre o nicho de interesse
@@ -41,6 +41,7 @@ if page == 2:
         try:
             # Mostrar canais de podcast relacionados ao nicho escolhido
             df = pd.read_csv(nome_arquivo)
+            df = df.rename(columns={"channel_title": "Canal", "channel_url": "Link", "subscriber_count": "Número de Inscritos"})
             st.header(f"Canais relacionados sobre {nicho}")
             st.write(df)
 

@@ -20,7 +20,7 @@ if page == 1:
         canais_diferentes = st.radio("Você costuma assistir canais diferentes?", ("Sim", "Não, gosto de assistir o mesmo sempre "))
         
         if canais_diferentes == "Sim":
-            st.subheader("Que ótimo! Mesmo que você já assista a diferentes canais, esse programa pode ajudar você a descobrir ainda mais opções interessantes. Você terá acesso a uma curadoria de novos canais por nicho, gráficos comparativos de popularidade e links diretos para facilitar a exploração de novos conteúdos. É uma oportunidade perfeita para expandir ainda mais sua lista de favoritos!😍")
+            st.subheader("Que ótimo! Mesmo que você já assista a diferentes canais, esse programa pode ajudar você a descobrir ainda mais opções interessantes. Você terá acesso aos canais de maior popularidades por nicho e a um gráfico de popularidade por nicho. É uma oportunidade perfeita para expandir ainda mais sua lista de favoritos!😍")
             if st.button("Next"):  # Verifica se o botão "Next" foi pressionado
                 st.session_state["page"] = 2
         else:

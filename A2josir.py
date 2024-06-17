@@ -20,7 +20,7 @@ if page == 1:
         canais_diferentes = st.radio("Você costuma assistir canais diferentes?", ("Sim", "Não, gosto de assistir o mesmo sempre "))
 
         if assiste_podcast == "Sim, amo!":
-            st.header("Se sim, que bom! Vou te mostrar outros para você experimentar. Se você só assiste os mesmos, essa é uma ótima oportunidade para conhecer novos canais.")
+            st.header("Se sim, que bom! Vou te mostrar outros para você experimentar. Se você só assiste os mesmos, essa é uma ótima oportunidade para conhecer novos canais. 😍")
             if st.button("Next"):  # Verifica se o botão "Next" foi pressionado
                 st.session_state["page"] = 2
 
@@ -35,7 +35,7 @@ def mostrar_grafico(df, nicho):
 if page == 2:
     with st.container():
         st.title("Nicho de Podcast")
-        st.header("Qual nicho de podcast você gosta de assistir?")
+        st.header("Qual nicho de podcast você gosta de assistir? 🎤")
         nicho = st.selectbox("Escolha um nicho", ["Conversas", "Empreendedorismo", "Educacao", "Esporte", "Jogos", "Tecnologia", "Noticias"])
         nome_arquivo = "podcast_" + nicho.lower() + ".csv"
 

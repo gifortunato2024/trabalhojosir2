@@ -19,11 +19,15 @@ if page == 1:
         frequencia = st.selectbox("Com qual frequência você assiste?", ["Diariamente", "Semanalmente", "Mensalmente", "Raramente", "Nunca"])
         canais_diferentes = st.radio("Você costuma assistir canais diferentes?", ("Sim", "Não, gosto de assistir o mesmo sempre "))
 
-        if assiste_podcast == "Sim, amo!":
-            st.header("Se sim, que bom! Vou te mostrar outros para você experimentar. Se você só assiste os mesmos, essa é uma ótima oportunidade para conhecer novos canais. 😍")
+        if canais_diferentes == "Sim":
+            st.header("Que bom! Vamos conhecer novos nichos de podcast! 😍")
             if st.button("Next"):  # Verifica se o botão "Next" foi pressionado
                 st.session_state["page"] = 2
-
+        else:
+            st.header("Se você gosta de assistir os mesmos, é uma ótima oportunidade para conhecer novos canais! 🥰")
+            if st.button("Next"):  # Verifica se o botão "Next" foi pressionado
+                st.session_state["page"] = 2
+                
 # Função para gerar e exibir o gráfico
 def mostrar_grafico(df, nicho):
     st.header(f"Comparação de Inscritos nos Canais de {nicho}")

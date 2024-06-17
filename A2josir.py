@@ -20,7 +20,7 @@ if page == 1:
         canais_diferentes = st.radio("Você costuma assistir canais diferentes?", ("Sim", "Não, gosto de assistir o mesmo sempre "))
         
         if canais_diferentes == "Sim":
-            st.subheader("Que ótimo! Mesmo que você já assista a diferentes canais, esse programa pode ajudar você a descobrir ainda mais opções interessantes. Você terá acesso aos canais de maior popularidades por nicho e a um gráfico de popularidade por nicho. É uma oportunidade perfeita para expandir ainda mais sua lista de favoritos!😍")
+            st.subheader("Que ótimo! Mesmo que você já assista a diferentes canais, esse programa pode ajudar você a descobrir ainda mais opções interessantes. Você terá acesso aos canais de maior popularidade por nicho e a um gráfico de popularidade por nicho. É uma oportunidade perfeita para expandir ainda mais sua lista de favoritos!😍")
             if st.button("Next"):  # Verifica se o botão "Next" foi pressionado
                 st.session_state["page"] = 2
         else:
@@ -47,6 +47,7 @@ if page == 2:
             # Mostrar canais de podcast relacionados ao nicho escolhido
             df = pd.read_csv(nome_arquivo)
             df = df.rename(columns={"channel_title": "Canal", "channel_url": "Link", "subscriber_count": "Número de Inscritos"})
+            df.reset_index(drop=True, inplace=True)  # Resetar o índice
             st.header(f"Canais relacionados sobre {nicho}")
             st.write(df)
 

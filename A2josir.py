@@ -27,6 +27,7 @@ if page == 1:
 # Função para gerar e exibir o gráfico
 def mostrar_grafico(df, nicho):
     st.header(f"Comparação de Inscritos nos Canais de {nicho}")
+    df = df.nlargest(10, 'Número de Inscritos')  # Filtra apenas os 10 canais com mais inscritos
     fig = px.bar(df, x='Canal', y='Número de Inscritos', title=f'Número de Inscritos nos Canais de {nicho}')
     st.plotly_chart(fig)
 
@@ -53,3 +54,4 @@ if page == 2:
 
         # Adiciona a imagem no topo da primeira página
         st.image("https://tecnoblog.net/noticias/youtube-teste-problema-desmonetizacao/", use_column_width=True)
+
